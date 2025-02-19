@@ -1,6 +1,6 @@
-package com.example.cleanarch3.data.remote
+package com.example.cleanarch3.presentation.posts.data.remote
 
-import com.example.cleanarch3.domain.model.Post
+import com.example.cleanarch3.presentation.posts.domain.model.Post
 import com.google.gson.annotations.SerializedName
 
 data class PostDto(

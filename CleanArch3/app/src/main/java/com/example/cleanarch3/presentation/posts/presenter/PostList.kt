@@ -1,4 +1,4 @@
-package com.example.cleanarch3.presentation
+package com.example.cleanarch3.presentation.posts.presenter
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -28,13 +28,23 @@ class PostList : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentPostListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setupComponents()
+        // Load posts
+        viewModel.loadPosts()
+    }
+    private fun setupComponents()
+    {
+        // Setup toolbar with back button
+        binding.toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
         // Setup RecyclerView
         binding.recyclerViewPosts.apply {
             layoutManager = LinearLayoutManager(requireContext())
@@ -47,9 +57,6 @@ class PostList : Fragment() {
                 postAdapter.setData(posts)
             }
         }
-
-        // Load posts
-        viewModel.loadPosts()
     }
 
     override fun onDestroyView() {

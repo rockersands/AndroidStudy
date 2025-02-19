@@ -1,10 +1,10 @@
-package com.example.cleanarch3.presentation
+package com.example.cleanarch3.presentation.posts.presenter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanarch3.databinding.ItemPostBinding
-import com.example.cleanarch3.domain.model.Post
+import com.example.cleanarch3.presentation.posts.domain.model.Post
 
 class PostAdapter(
     private val posts: MutableList<Post> = mutableListOf()

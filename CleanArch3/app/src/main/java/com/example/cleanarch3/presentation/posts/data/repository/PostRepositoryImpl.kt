@@ -1,10 +1,11 @@
-package com.example.cleanarch3.data.repository
+package com.example.cleanarch3.presentation.posts.data.repository
 
-import com.example.cleanarch3.data.local.PostDao
-import com.example.cleanarch3.data.local.PostEntity
-import com.example.cleanarch3.data.remote.PostApi
-import com.example.cleanarch3.domain.model.Post
-import com.example.cleanarch3.domain.repository.PostRepository
+import com.example.cleanarch3.presentation.posts.data.local.PostDao
+import com.example.cleanarch3.presentation.posts.data.local.PostEntity
+import com.example.cleanarch3.presentation.posts.data.remote.PostApi
+import com.example.cleanarch3.presentation.posts.domain.model.Comment
+import com.example.cleanarch3.presentation.posts.domain.model.Post
+import com.example.cleanarch3.presentation.posts.domain.repository.PostRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -28,5 +29,9 @@ class PostRepositoryImpl @Inject constructor(
         println("Fetched ${localPosts.size} posts from DB")
 
         return@withContext localPosts.map { it.toDomain() }
+    }
+
+    override suspend fun getComments(): List<Comment> {
+        TODO("Not yet implemented")
     }
 }

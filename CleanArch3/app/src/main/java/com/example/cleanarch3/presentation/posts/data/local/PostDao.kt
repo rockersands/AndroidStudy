@@ -1,4 +1,4 @@
-package com.example.cleanarch3.data.local
+package com.example.cleanarch3.presentation.posts.data.local
 
 import androidx.room.Dao
 import androidx.room.Insert

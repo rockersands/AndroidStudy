@@ -1,8 +1,8 @@
-package com.example.cleanarch3.data.local
+package com.example.cleanarch3.presentation.posts.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.cleanarch3.domain.model.Post
+import com.example.cleanarch3.presentation.posts.domain.model.Post
 
 @Entity(tableName = "posts")
 data class PostEntity(

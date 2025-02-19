@@ -3,12 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/postListFragment">
+    app:startDestination="@id/home2">
 
     <fragment
         android:id="@+id/postListFragment"
-        android:name="com.example.cleanarch3.presentation.PostList"
+        android:name="com.example.cleanarch3.presentation.posts.presenter.PostList"
         android:label="Post List"
         tools:layout="@layout/fragment_post_list" />
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.cleanarch3.presentation.home.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_postListFragment"
+            app:destination="@id/postListFragment" />
+    </fragment>
 
 </navigation>

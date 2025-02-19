@@ -1,7 +1,8 @@
-package com.example.cleanarch3.domain.usecase
+package com.example.cleanarch3.presentation.posts.domain.usecase
 
-import com.example.cleanarch3.domain.model.Post
-import com.example.cleanarch3.domain.repository.PostRepository
+import com.example.cleanarch3.presentation.posts.domain.model.Comment
+import com.example.cleanarch3.presentation.posts.domain.model.Post
+import com.example.cleanarch3.presentation.posts.domain.repository.PostRepository
 import javax.inject.Inject
 
 class GetPostsUseCase @Inject constructor(
